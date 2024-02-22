@@ -1,0 +1,48 @@
+﻿<Page x:Class="mfc_tomsk.PAGE_ADMIN.Department"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:mfc_tomsk.PAGE_ADMIN"
+      mc:Ignorable="d" Background="Snow"
+      d:DesignHeight="460" d:DesignWidth="700"
+      Title="Редактирование филиалов и подразделений">
+    <Border Padding="5" Margin="-1,0,0,0">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Филиалы" FontSize="25" FontStyle="Italic" Margin="10 0 0 0"/>
+                <ComboBox FontSize="18" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" x:Name="departmentAdmin" Margin="5,41,15,39" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" DropDownClosed="Update"/>
+                <TextBlock Text="Название филиала или подразделения" FontSize="17" Foreground="Brown" Grid.ColumnSpan="3" Margin="6,30,224,0" Grid.Row="1"/>
+                <TextBox x:Name="DepTextbox" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Row="1" Grid.ColumnSpan="3" Margin="5,57,15,23" Grid.RowSpan="2" MouseEnter="FilialBrush"/>
+                <TextBlock Text="Контактное лицо" FontSize="17" Foreground="Brown" Grid.ColumnSpan="3" Margin="6,39,224,55" Grid.Row="2" Grid.RowSpan="3"/>
+                <TextBox x:Name="ContactTextbox" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Row="4" Grid.ColumnSpan="3" Margin="5,5,15,15" MouseEnter="ContactBrush"/>
+                <Button Content="Сохранить" Background="AliceBlue" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="SaveButton" Grid.Row="6" Margin="17,0,162,15" Grid.ColumnSpan="2" Click="SaveButton_Click"/>
+                <Button Content="Добавить филиал" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="6" FontSize="20" Margin="91,0,78,13" Background="Wheat" RenderTransformOrigin="0,0" Grid.ColumnSpan="2" Grid.Column="1" x:Name="ButtonDep" Click="Button_Click">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Page>

@@ -1,0 +1,45 @@
+﻿<Page x:Class="mfc_tomsk.PAGE_ADMIN.Position"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:mfc_tomsk.PAGE_ADMIN"
+      mc:Ignorable="d" 
+      d:DesignHeight="460" d:DesignWidth="650"
+      Title="Редактирование должностей" Background="Snow">
+    <Border Padding="5">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Должности" FontSize="25" FontStyle="Italic" Margin="10 0 0 0"/>
+                <ComboBox FontSize="19" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" x:Name="positionAdmin" Margin="5,41,71,39" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" DropDownClosed="test"/>
+                <TextBlock Text="Должность" Foreground="Brown" FontSize="20" Margin="8,22,205,11" Grid.ColumnSpan="2" Grid.Row="1"/>
+                <TextBox x:Name="positionTextbox" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Row="1" Grid.ColumnSpan="3" Margin="5,52,72,28" Grid.RowSpan="2" MouseEnter="GoGray"/>
+                <Button Content="Сохранить" Background="AliceBlue" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="SaveButton" Grid.Row="5" Grid.ColumnSpan="2" Margin="8,0,163,12" Click="SaveButton_Click"/>
+                <Button Content="Добавить должность" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="5" FontSize="20" Margin="90,0,81,13" Background="Wheat" x:Name="ButDol" RenderTransformOrigin="0,0" Click="Button_Click_1" Grid.ColumnSpan="2" Grid.Column="1">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Page>

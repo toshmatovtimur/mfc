@@ -1,0 +1,38 @@
+﻿<Page x:Class="mfc_tomsk.PAGE.Admins"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:mfc_tomsk.PAGE"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="490"
+      Title="Admins" Background="White">
+    <Grid>
+        <ListView x:Name="listviewAdmins" HorizontalAlignment="Stretch"  
+                  Margin="5" VerticalAlignment="Stretch" SelectionMode="Extended" 
+                  IsSynchronizedWithCurrentItem="True">
+            <ListView.Resources>
+                <Style TargetType="TextBlock">
+                    <EventSetter Event="MouseRightButtonUp" Handler="OnMouseRightButtonUp"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkSalmon"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Firstname, Mode=OneWay}" 
+                      Header="Фамилия" Width="120"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name, Mode=OneWay}" 
+                      Header="Имя" Width="120"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Lastname, Mode=OneWay}" 
+                      Header="Отчество" Width="120"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Number, Mode=OneWay}" 
+                      Header="Номер" Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

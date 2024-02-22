@@ -1,0 +1,36 @@
+﻿<Page x:Class="mfc_tomsk.PAGE.Departments"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:mfc_tomsk.PAGE"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Departments" Background="White">
+
+    <Grid>
+        <ListView x:Name="listviewDepartments" HorizontalAlignment="Stretch"  
+                  Margin="5" VerticalAlignment="Stretch" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True">
+            <ListView.Resources>
+                <Style TargetType="TextBlock">
+                    <EventSetter Event="MouseRightButtonUp" Handler="OnMouseRightButtonUp"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkSalmon"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id, Mode=OneWay}" 
+                      Header="Код" Width="45"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=DepartmentName, Mode=OneWay}" 
+                      Header="Наименование филиала или подразделения" Width="470"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Address, Mode=OneWay}" 
+                      Header="Контактное лицо" Width="260"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

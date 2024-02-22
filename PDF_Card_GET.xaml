@@ -1,0 +1,62 @@
+﻿<Window x:Class="mfc_tomsk.PDF_Card_GET"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mfc_tomsk"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Получить карточку доступа" Icon="Resources\logo.jpg" Height="570" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Введите запрос" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" FontStyle="Italic" Margin="62,0,0,0" Height="30" Width="157"/>
+        <TextBox x:Name="Zapros" Grid.ColumnSpan="2" VerticalContentAlignment="Center" FontSize="20" KeyDown="KeyDown" KeyUp="KeyUp" Grid.Row="0" Height="30" Margin="208,15,112,15" />
+        <ListView x:Name="listviewUSERSGETPDF"  
+                  Grid.Row="1" Grid.RowSpan="8" VerticalAlignment="Top" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True" Height="475" Margin="0,0,75,0" MouseDoubleClick="Test">
+            <ListView.Resources>
+                <Style TargetType="TextBlock">
+                    <EventSetter Event="MouseRightButtonUp" Handler="OnMouseRightButtonUp"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkSalmon"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Code, Mode=OneWay}" Header="Код" Width="50"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName, Mode=OneWay}" Header="ФИО" Width="130"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Login, Mode=OneWay}" Header="Логин" Width="105"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListBox x:Name="MyList" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" MouseDoubleClick="go" Margin="0,26,75,0"/>
+        <TextBlock Text="Выбранные элементы" FontStyle="Italic" FontSize="15" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" Margin="91,3,0,33" />
+        <TextBlock FontStyle="Italic" Foreground="Brown" FontSize="15" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="10,3,0,33" Width="376" Text="Код   Фамилия  Имя  Отчество" />
+        <Button Grid.Column="1" Grid.Row="6" Background="White" Grid.RowSpan="2" Margin="23,37,263,27" Click="Button_Click_1">
+            <Image Source="Resources\png.png"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="6" Background="White" Grid.RowSpan="2" Margin="191,37,99,27" Click="Button_Click_2">
+            <Image Source="Resources\close.png" StretchDirection="DownOnly" Stretch="Uniform"/>
+        </Button>
+        <TextBlock Text="Сохранить" Grid.Column="1" Grid.Row="7" FontSize="20" Margin="28,31,264,0"/>
+        <TextBlock Grid.Column="1" Grid.Row="7" FontSize="20" Margin="214,30,83,1"><Run Language="ru-ru" Text="Выйти"/></TextBlock>
+    </Grid>
+</Window>

@@ -1,0 +1,42 @@
+﻿<Page x:Class="mfc_tomsk.PAGE_ADMIN.Adminpage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:mfc_tomsk.PAGE_ADMIN"
+      mc:Ignorable="d" 
+      d:DesignHeight="460" d:DesignWidth="650" 
+      Title="Admin" Background="Snow">
+    <Border Padding="5">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Список администраторов" FontSize="25" Grid.Column="0" Grid.ColumnSpan="3" FontStyle="Italic" Margin="5,0,213,20"/>
+                <ComboBox FontSize="19" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" x:Name="adminspage" Margin="5,41,10,39" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" DropDownClosed="test"/>
+                <Button Content="Добавить" FontSize="27" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="5" Margin="186,13,5,3" Background="Wheat" Click="Button_Click_2" Grid.ColumnSpan="2" x:Name="Addd"/>
+                <TextBlock Text="Фамилия" Foreground="Brown" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Width="122" Margin="20,43,0,0" Grid.RowSpan="2"/>
+                <TextBlock Text="Имя" FontSize="20" Foreground="Brown" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Width="89" Margin="20,38,0,0" Grid.RowSpan="2"/>
+                <TextBlock Text="Отчество" FontSize="20" Foreground="Brown" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3" Margin="20,38,0,0" Width="113" Grid.RowSpan="2"/>
+                <TextBlock Text="Телефон" FontSize="20" Foreground="Brown" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="4" Margin="20,38,0,0" Width="113" Grid.RowSpan="2"/>
+                <TextBox x:Name="Firstname" Grid.Row="1" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="142,42,38,38" Grid.ColumnSpan="2" Grid.RowSpan="2" MouseEnter="MouseFam"/>
+                <TextBox x:Name="Name" Grid.Row="2" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Margin="141,35,39,0" Grid.ColumnSpan="2" Height="40" VerticalAlignment="Top" Grid.RowSpan="2" MouseEnter="MouseNam"/>
+                <TextBox x:Name="Lastname" Grid.ColumnSpan="2" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Grid.Row="3" Margin="140,28,39,52" Grid.RowSpan="2" MouseEnter="MouseLas"/>
+                <TextBox x:Name="Number" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="4" FontSize="20" Margin="140,21,39,59" Grid.ColumnSpan="2" Grid.RowSpan="2" MouseEnter="MouseNumb"/>
+                <Button x:Name="GoGoGo" Content="Сохранить" FontSize="30" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Background="AliceBlue" Margin="141,13,42,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Click="GoGoGo_Click"></Button>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Page>

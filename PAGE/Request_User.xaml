@@ -1,0 +1,45 @@
+﻿<Page x:Class="mfc_tomsk.PAGE.Request_User"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:mfc_tomsk.PAGE"
+      mc:Ignorable="d" Background="White"
+      d:DesignHeight="470" d:DesignWidth="800"
+      Title="Request_User">
+    <Border Padding="5">
+        <Grid>
+            <TextBlock Text="Введите запрос" FontSize="17" VerticalAlignment="Top" Margin="165,14,505,0" Height="22"/>
+            <TextBox VerticalAlignment="Top" FontSize="20" x:Name="Request" Margin="300,11,178,0" Height="30" KeyDown="GoDown" KeyUp="GoUp"/>
+            <ListView x:Name="listviewCards" HorizontalAlignment="Stretch"  
+                  Margin="5 60 0 0" VerticalAlignment="Stretch" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListView.Resources>
+                    <Style TargetType="TextBlock">
+                        <EventSetter Event="MouseRightButtonUp" Handler="OnMouseRightButtonUp"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSalmon"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.Resources>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Code, Mode=OneWay}" Header="Код" Width="45"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Depart, Mode=OneWay}" Header="Наименование филиала или подразделения" Width="250"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Snils, Mode=OneWay}" Header="Снилс" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName, Mode=OneWay}" Header="Фамилия" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name, Mode=OneWay}" Header="Имя" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=LastName, Mode=OneWay}" Header="Отчество" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Position, Mode=OneWay}" Header="Должность" Width="230"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Login, Mode=OneWay}" Header="Логин" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Password, Mode=OneWay}" Header="Пароль" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=PasswordFhraze, Mode=OneWay}" Header="Парольная фраза" Width="140"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=MyDate, Mode=OneWay}" Header="Дата выдачи" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Admin, Mode=OneWay}" Header="Ответственное лицо" Width="120"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </Border>
+</Page>
